@@ -1,0 +1,78 @@
+.secText {
+    color: #ADADAD;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.secText h1 {
+    font-size: 30px;
+}
+
+.h1Div {
+    border-left: #ADADAD 1px solid;
+    padding: 20px;
+}
+.h1Div article {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.secText button {
+    margin-left: 21px;
+    background-color: unset;
+    border: 1px solid #D53A12;
+    color: #ADADAD;
+    font-size: 19px;
+    padding: 7px 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.secText button:hover {
+    transition: background-color 0.3s ease-in-out;
+    background-color: #D53A12;
+}
+
+.proIconDiv{
+    border: #ADADAD 1px solid;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.proIcon {
+    width: 20px;
+}
+
+.viewProDiv a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 70px;
+    color: #ADADAD;
+    width: fit-content;
+}
+
+.viewProDiv hr{
+    width: 30px;
+}
+
+.leftSideDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.secHero img {
+    width: 500px;
+}
+
+.logo {
+    color: #D53A12;
+}

@@ -1,0 +1,42 @@
+.navSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+    align-items: center;
+    height: 100%;
+}
+#navDivTop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0F0F0F;
+    height: 50px;
+
+    /* background: #f46b45;
+    background: -webkit-linear-gradient(to bottom, #eea849, #f46b45);  
+    background: linear-gradient(to bottom, #eea849, #f46b45); */
+    
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.nav a{
+    color: #ADADAD;
+    font-size: 24px;
+    text-underline-offset: 10px;
+}
+.nav a:hover{
+    text-decoration: underline;
+    transition: text-decoration-color 0.5s ease-in-out;
+    text-decoration-color: #D53A12;
+}
+  
+.logo {
+    color: #D53A12;
+}
+

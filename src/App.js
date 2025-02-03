@@ -1,0 +1,207 @@
+import React, { useState, useEffect } from 'react';
+import hero from './assets/img/heroPic.jpg';
+import proj1 from './assets/img/project1.jpg';
+import secretCallc from './assets/img/secretcallsProj.jpg';
+import aboutImg from './assets/img/project1.jpg';
+
+const projects = [
+  {
+    id: 1,
+    title: "SecureCalc Vault",
+    description:
+      "SecureCalc Vault is a unique application that blends the simplicity of a calculator with the security of a private gallery. After registering, users are prompted to enter a designated PIN code. Once the correct PIN is provided, the app reveals a hidden gallery where users can safely store and manage their photos and videos. This seamless fusion of functionality and privacy ensures that everyday calculations and your most treasured media are all secured in one innovative platform.",
+    img: secretCallc,
+    link: "https://secretcallc.vercel.app/"
+  },
+  {
+    id: 2,
+    title: "P 2",
+    description: "SecureCalc Vault is a uniq",
+    img: proj1,
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "P 3",
+    description: "SecureCalc Vault is a uniq",
+    img: proj1,
+    link: "#"
+  }
+];
+
+const me = {
+  name: "Allahverdi Mukhtarli",
+  github: "https://github.com/OrxanMukhtar",
+  instagram: "https://instagram.com",
+  facebook: "https://facebook.com",
+  description1: "Web Designer & Developer",
+  description: "Premium Web Design, Development, and SEO services to help your business stand out."
+};
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    const animateElements = document.querySelectorAll('.animate');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); 
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    animateElements.forEach(el => observer.observe(el));
+    return () => {
+      animateElements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
+
+  return (
+    <div>
+      {/* Navbar */}
+      <header className="navbar">
+        <div className="navbar-container">
+          <div className="navbar-brand">Mukhtarli</div>
+          <button
+            className={`navbar-toggle ${menuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Menu Toggle"
+            aria-expanded={menuOpen}
+          >
+            <span className="hamburger"></span>
+            <span className="hamburger"></span>
+            <span className="hamburger"></span>
+          </button>
+          <nav className={`navbar-menu ${menuOpen ? "active" : ""}`}>
+            <a href="#home" onClick={() => setMenuOpen(false)}>
+              Home
+            </a>
+            <a href="#about" onClick={() => setMenuOpen(false)}>
+              About me
+            </a>
+            <a href="#projects" onClick={() => setMenuOpen(false)}>
+              Projects
+            </a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="section hero animate">
+        <div className="container hero-container">
+          <div className="hero-text">
+            <h1>{me.description1}</h1>
+            <p>{me.description}</p>
+            <a href="#projects" className="btn">
+              Projects
+            </a>
+          </div>
+          <div className="hero-image">
+            <img src={hero} alt="Hero" />
+          </div>
+        </div>
+      </section>
+
+      <section id="ticker">
+  <div className="ticker-wrapper">
+    <div className="ticker-content">
+      <span>lets talk </span>
+      <span> +++ </span>
+      <span>lets talk </span>
+      <span> +++ </span>
+      <span className='dispNon'>lets talk </span>
+      <span className='dispNon'> +++ </span>
+      <span className='dispNon'>lets talk </span>
+      <span className='dispNon'> +++ </span>
+
+    </div>
+    <div className="ticker-content">
+      <span>lets talk </span>
+      <span> +++ </span>
+      <span>lets talk </span>
+      <span> +++ </span>
+      <span className='dispNon'>lets talk </span>
+      <span className='dispNon'> +++ </span>
+      <span className='dispNon'>lets talk </span>
+      <span className='dispNon'> +++ </span>
+
+    </div>
+  </div>
+</section>
+      {/* About */}
+      <section id="about" className="section about aboutDiv animate">
+        <img src={aboutImg} alt="About" />
+        <div className="container marginNull contSecond">
+          <h2>About me</h2>
+          <p className="textColor">
+            Hi, I'm {me.name} - a freelancer specializing in premium web design, development, and SEO services. I'm passionate about creating unique and effective solutions for my clients, and I bring a personal touch to every project. Let's work together to bring your vision to life!
+          </p>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="section projects animate">
+        <div className="container">
+          <h2>Projects</h2>
+          <div className="projects-grid">
+            {projects.map(project => (
+              <div key={project.id} className="project-card">
+                <img src={project.img} alt={project.title} />
+                <div className="project-content">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <a href={project.link} rel="noopener noreferrer" target="_blank" className="btn btn-outline">
+                    View
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="section contact animate">
+        <div className="container">
+          <h2>Contact</h2>
+          <form className="contact-form">
+            <div className="form-row">
+              <div className="form-group">
+                <input type="text" id="formName" placeholder="Name" />
+              </div>
+              <div className="form-group">
+                <input type="email" id="formEmail" placeholder="Email" />
+              </div>
+            </div>
+            <div className="form-group">
+              <textarea id="formMessage" rows="4" placeholder="Message"></textarea>
+            </div>
+            <button type="submit" className="btn">
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <p>© {new Date().getFullYear()} All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
