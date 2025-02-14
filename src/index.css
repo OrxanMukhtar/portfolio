@@ -78,6 +78,7 @@ body {
 .navbar-menu {
   display: flex;
   gap: 20px;
+  border-top: 3px solid #dd0b0b;
 }
 
 .navbar-menu a {
@@ -237,7 +238,7 @@ body {
 .ticker-wrapper {
   display: flex;
   width: calc(200%);
-  animation: ticker 15s linear infinite;
+  animation: ticker 10s linear infinite;
 }
 
 .ticker-content {
@@ -250,7 +251,7 @@ body {
   display: inline-block;
   color: #fff;
   font-size: 1.2rem;
-  padding: 0 2rem;
+  padding: 0 10px;
 }
 
 /* Keyframes: wrapper %50*/
@@ -319,7 +320,7 @@ body {
   width: 100%;
   height: auto;
 }
-
+  
 .project-content {
   padding: 15px;
   flex: 1;

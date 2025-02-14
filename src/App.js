@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import hero from './assets/img/heroPic.jpg';
 import proj1 from './assets/img/project1.jpg';
 import secretCallc from './assets/img/secretcallsProj.jpg';
+import flowers from './assets/img/flowers.jpg'
 import aboutImg from './assets/img/project1.jpg';
 
 const projects = [
@@ -15,10 +16,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "P 2",
-    description: "SecureCalc Vault is a uniq",
-    img: proj1,
-    link: "#"
+    title: "FlexiSite",
+    description: "This is a flexible template that can be used as both an informational website and a sales platform. It can be customized upon request and adapted into an e-commerce site in any desired theme. With its modern design and user-friendly structure, it fits various business models seamlessly.",
+    img: flowers,
+    link: "https://flowers-theta-one.vercel.app/"
   },
   {
     id: 3,
@@ -157,7 +158,9 @@ function App() {
           <div className="projects-grid">
             {projects.map(project => (
               <div key={project.id} className="project-card">
-                <img src={project.img} alt={project.title} />
+                <div className='imgDivP'>
+                  <img src={project.img} alt={project.title} />
+                </div>
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
