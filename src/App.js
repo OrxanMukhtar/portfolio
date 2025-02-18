@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import hero from './assets/img/heroPic.jpg';
-import proj1 from './assets/img/project1.jpg';
 import secretCallc from './assets/img/secretcallsProj.jpg';
 import flowers from './assets/img/flowers.jpg'
 import aboutImg from './assets/img/project1.jpg';
+import toDoApp from './assets/img/toDoApp.jpg'
 
 const projects = [
   {
@@ -23,10 +23,10 @@ const projects = [
   },
   {
     id: 3,
-    title: "P 3",
-    description: "SecureCalc Vault is a uniq",
-    img: proj1,
-    link: "#"
+    title: "To Do App",
+    description: "Manage your tasks easily with a simple and user-friendly To-Do app. Add new tasks, mark completed ones, and keep your daily activities organized.",
+    img: toDoApp,
+    link: "https://todo1001.vercel.app/"
   }
 ];
 
