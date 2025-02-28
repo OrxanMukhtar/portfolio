@@ -3,7 +3,11 @@ import hero from './assets/img/heroPic.jpg';
 import secretCallc from './assets/img/secretcallsProj.jpg';
 import flowers from './assets/img/flowers.jpg'
 import aboutImg from './assets/img/project1.jpg';
-import toDoApp from './assets/img/toDoApp.jpg'
+import toDoApp from './assets/img/toDoApp.jpg';
+import ardunioPic from './assets/img/ardunioPic.jpg'
+import complainsPic from './assets/img/complainsPic.jpg'
+
+import { useForm, ValidationError } from '@formspree/react';
 
 const projects = [
   {
@@ -27,6 +31,20 @@ const projects = [
     description: "Manage your tasks easily with a simple and user-friendly To-Do app. Add new tasks, mark completed ones, and keep your daily activities organized.",
     img: toDoApp,
     link: "https://todo1001.vercel.app/"
+  },
+  {
+    id: 4,
+    title: "Compiler & Emulator",
+    description: "On our website, you can find comprehensive lessons on the Assembly programming language and Arduino. We provide detailed explanations and examples covering everything from basic concepts to advanced techniques. Our goal is to create a clear and informative resource for anyone interested in learning Assembly and Arduino.",
+    img: ardunioPic,
+    link: "https://flowgorithms.netlify.app/assets/html/argument-2"
+  },
+  {
+    id: 5,
+    title: "Comlains",
+    description: "We have a website where you can easily share your complaints and suggestions. You can express your thoughts on any topic and make your voice heard. Our platform allows users to share their experiences and provide feedback for better solutions.",
+    img: complainsPic,
+    link: "https://sikayet.netlify.app/"
   }
 ];
 
@@ -38,6 +56,43 @@ const me = {
   description1: "Web Designer & Developer",
   description: "Premium Web Design, Development, and SEO services to help your business stand out."
 };
+
+function ContactForm() {
+  const [state, handleSubmit] = useForm("xanqrnol");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="email">
+        Email Address
+      </label>
+      <input
+        id="email"
+        type="email" 
+        name="email"
+      />
+      <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
+      <textarea
+        id="message"
+        name="message"
+      />
+      <ValidationError 
+        prefix="Message" 
+        field="message"
+        errors={state.errors}
+      />
+      <button type="submit" disabled={state.submitting}>
+        Submit
+      </button>
+    </form>
+  );
+}
+
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -178,23 +233,24 @@ function App() {
       <section id="contact" className="section contact animate">
         <div className="container">
           <h2>Contact</h2>
-          <form className="contact-form">
+          <form className="contact-form" action="https://formspree.io/f/xanqrnol" method="POST">
             <div className="form-row">
               <div className="form-group">
                 <input type="text" id="formName" placeholder="Name" />
               </div>
               <div className="form-group">
-                <input type="email" id="formEmail" placeholder="Email" />
+                <input type="email" id="formEmail" name='email' placeholder="Email" />
               </div>
             </div>
             <div className="form-group">
-              <textarea id="formMessage" rows="4" placeholder="Message"></textarea>
+              <textarea id="formMessage" name='message' rows="4" placeholder="Message"></textarea>
             </div>
             <button type="submit" className="btn">
               Send
             </button>
           </form>
         </div>
+        {/* <ContactForm /> */}
       </section>
 
       {/* Footer */}
