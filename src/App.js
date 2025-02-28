@@ -7,7 +7,7 @@ import toDoApp from './assets/img/toDoApp.jpg';
 import ardunioPic from './assets/img/ardunioPic.jpg'
 import complainsPic from './assets/img/complainsPic.jpg'
 
-import { useForm, ValidationError } from '@formspree/react';
+// import { useForm, ValidationError } from '@formspree/react';
 
 const projects = [
   {
@@ -57,41 +57,41 @@ const me = {
   description: "Premium Web Design, Development, and SEO services to help your business stand out."
 };
 
-function ContactForm() {
-  const [state, handleSubmit] = useForm("xanqrnol");
-  if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
-  }
-  return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">
-        Email Address
-      </label>
-      <input
-        id="email"
-        type="email" 
-        name="email"
-      />
-      <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
-      <textarea
-        id="message"
-        name="message"
-      />
-      <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-      />
-      <button type="submit" disabled={state.submitting}>
-        Submit
-      </button>
-    </form>
-  );
-}
+// function ContactForm() {
+//   const [state, handleSubmit] = useForm("xanqrnol");
+//   if (state.succeeded) {
+//       return <p>Thanks for joining!</p>;
+//   }
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <label htmlFor="email">
+//         Email Address
+//       </label>
+//       <input
+//         id="email"
+//         type="email" 
+//         name="email"
+//       />
+//       <ValidationError 
+//         prefix="Email" 
+//         field="email"
+//         errors={state.errors}
+//       />
+//       <textarea
+//         id="message"
+//         name="message"
+//       />
+//       <ValidationError 
+//         prefix="Message" 
+//         field="message"
+//         errors={state.errors}
+//       />
+//       <button type="submit" disabled={state.submitting}>
+//         Submit
+//       </button>
+//     </form>
+//   );
+// }
 
 
 function App() {
