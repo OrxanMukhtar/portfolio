@@ -396,3 +396,19 @@ body {
   margin: 0;
   width: 500px;
 }
+
+
+.contactLinkDiv {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #d7c6b7;
+  width: fit-content;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 10px;
+
+}
+.contactLinkDiv a {
+  color: #dd0b0b;
+  text-decoration: none;
+}

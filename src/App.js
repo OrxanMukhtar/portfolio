@@ -203,6 +203,11 @@ function App() {
           <p className="textColor">
             Hi, I'm {me.name} - a freelancer specializing in premium web design, development, and SEO services. I'm passionate about creating unique and effective solutions for my clients, and I bring a personal touch to every project. Let's work together to bring your vision to life!
           </p>
+          <div className='contactLinkDiv'>
+            <a href={me.instagram} target='blank'>Instagram</a>
+            <a href={me.github} target='blank'>GitHub</a>
+            <a href='https://wa.me/994508335557' target='blank'>Whatsapp</a>
+          </div>
         </div>
       </section>
 
