@@ -412,3 +412,14 @@ body {
   color: #dd0b0b;
   text-decoration: none;
 }
+.contactLinkDivFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.contactLinkDivFooter a {
+  text-decoration: none;
+  color: #dd0b0b;
+}

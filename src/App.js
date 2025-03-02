@@ -50,7 +50,7 @@ const projects = [
 
 const me = {
   name: "Allahverdi Mukhtarli",
-  github: "https://github.com/OrxanMukhtar",
+  github: "https://github.com/mukhtarli.web",
   instagram: "https://instagram.com",
   facebook: "https://facebook.com",
   description1: "Web Designer & Developer",
@@ -205,8 +205,8 @@ function App() {
           </p>
           <div className='contactLinkDiv'>
             <a href={me.instagram} target='blank'>Instagram</a>
-            <a href={me.github} target='blank'>GitHub</a>
             <a href='https://wa.me/994508335557' target='blank'>Whatsapp</a>
+            <a href={me.github} target='blank'>GitHub</a>
           </div>
         </div>
       </section>
@@ -256,6 +256,7 @@ function App() {
           </form>
         </div>
         {/* <ContactForm /> */}
+        
       </section>
 
       {/* Footer */}
@@ -263,6 +264,12 @@ function App() {
         <div className="container">
           <p>© {new Date().getFullYear()} All rights reserved.</p>
         </div>
+        <div className='contactLinkDivFooter'>
+          <a href={me.instagram} target='blank'>Instagram</a>
+          <a href='https://wa.me/994508335557' target='blank'>Whatsapp</a>
+          <a href={me.github} target='blank'>GitHub</a>
+        </div>
+
       </footer>
     </div>
   );
