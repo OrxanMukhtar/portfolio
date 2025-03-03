@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import hero from './assets/img/heroPic.jpg';
-import secretCallc from './assets/img/secretcallsProj.jpg';
-import flowers from './assets/img/flowers.jpg'
-import aboutImg from './assets/img/project1.jpg';
-import toDoApp from './assets/img/toDoApp.jpg';
-import ardunioPic from './assets/img/ardunioPic.jpg'
-import complainsPic from './assets/img/complainsPic.jpg'
+import React, { useState, useEffect } from "react";
+import hero from "./assets/img/heroPic.jpg";
+import secretCallc from "./assets/img/secretcallsProj.jpg";
+import flowers from "./assets/img/flowers.jpg";
+import aboutImg from "./assets/img/project1.jpg";
+import toDoApp from "./assets/img/toDoApp.jpg";
+import ardunioPic from "./assets/img/ardunioPic.jpg";
+import complainsPic from "./assets/img/complainsPic.jpg";
 
 // import { useForm, ValidationError } from '@formspree/react';
 
@@ -16,45 +16,50 @@ const projects = [
     description:
       "SecureCalc Vault is a unique application that blends the simplicity of a calculator with the security of a private gallery. After registering, users are prompted to enter a designated PIN code. Once the correct PIN is provided, the app reveals a hidden gallery where users can safely store and manage their photos and videos. This seamless fusion of functionality and privacy ensures that everyday calculations and your most treasured media are all secured in one innovative platform.",
     img: secretCallc,
-    link: "https://secretcallc.vercel.app/"
+    link: "https://secretcallc.vercel.app/",
   },
   {
     id: 2,
     title: "FlexiSite",
-    description: "This is a flexible template that can be used as both an informational website and a sales platform. It can be customized upon request and adapted into an e-commerce site in any desired theme. With its modern design and user-friendly structure, it fits various business models seamlessly.",
+    description:
+      "This is a flexible template that can be used as both an informational website and a sales platform. It can be customized upon request and adapted into an e-commerce site in any desired theme. With its modern design and user-friendly structure, it fits various business models seamlessly.",
     img: flowers,
-    link: "https://flowers-theta-one.vercel.app/"
+    link: "https://flowers-theta-one.vercel.app/",
   },
   {
     id: 3,
     title: "To Do App",
-    description: "Manage your tasks easily with a simple and user-friendly To-Do app. Add new tasks, mark completed ones, and keep your daily activities organized.",
+    description:
+      "Manage your tasks easily with a simple and user-friendly To-Do app. Add new tasks, mark completed ones, and keep your daily activities organized.",
     img: toDoApp,
-    link: "https://todo1001.vercel.app/"
+    link: "https://todo1001.vercel.app/",
   },
   {
     id: 4,
     title: "Compiler & Emulator",
-    description: "On our website, you can find comprehensive lessons on the Assembly programming language and Arduino. We provide detailed explanations and examples covering everything from basic concepts to advanced techniques. Our goal is to create a clear and informative resource for anyone interested in learning Assembly and Arduino.",
+    description:
+      "On our website, you can find comprehensive lessons on the Assembly programming language and Arduino. We provide detailed explanations and examples covering everything from basic concepts to advanced techniques. Our goal is to create a clear and informative resource for anyone interested in learning Assembly and Arduino.",
     img: ardunioPic,
-    link: "https://flowgorithms.netlify.app/assets/html/argument-2"
+    link: "https://flowgorithms.netlify.app/assets/html/argument-2",
   },
   {
     id: 5,
     title: "Comlains",
-    description: "We have a website where you can easily share your complaints and suggestions. You can express your thoughts on any topic and make your voice heard. Our platform allows users to share their experiences and provide feedback for better solutions.",
+    description:
+      "We have a website where you can easily share your complaints and suggestions. You can express your thoughts on any topic and make your voice heard. Our platform allows users to share their experiences and provide feedback for better solutions.",
     img: complainsPic,
-    link: "https://sikayet.netlify.app/"
-  }
+    link: "https://sikayet.netlify.app/",
+  },
 ];
 
 const me = {
   name: "Allahverdi Mukhtarli",
-  github: "https://github.com/mukhtarli.web",
-  instagram: "https://instagram.com",
+  github: "https://github.com/OrxanMukhtar",
+  instagram: "https://instagram.com/mukhtarli.web",
   facebook: "https://facebook.com",
   description1: "Web Designer & Developer",
-  description: "Premium Web Design, Development, and SEO services to help your business stand out."
+  description:
+    "Premium Web Design, Development, and SEO services to help your business stand out.",
 };
 
 // function ContactForm() {
@@ -69,11 +74,11 @@ const me = {
 //       </label>
 //       <input
 //         id="email"
-//         type="email" 
+//         type="email"
 //         name="email"
 //       />
-//       <ValidationError 
-//         prefix="Email" 
+//       <ValidationError
+//         prefix="Email"
 //         field="email"
 //         errors={state.errors}
 //       />
@@ -81,8 +86,8 @@ const me = {
 //         id="message"
 //         name="message"
 //       />
-//       <ValidationError 
-//         prefix="Message" 
+//       <ValidationError
+//         prefix="Message"
 //         field="message"
 //         errors={state.errors}
 //       />
@@ -93,7 +98,6 @@ const me = {
 //   );
 // }
 
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -102,21 +106,21 @@ function App() {
   };
 
   useEffect(() => {
-    const animateElements = document.querySelectorAll('.animate');
+    const animateElements = document.querySelectorAll(".animate");
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); 
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.2 }
     );
-    animateElements.forEach(el => observer.observe(el));
+    animateElements.forEach((el) => observer.observe(el));
     return () => {
-      animateElements.forEach(el => observer.unobserve(el));
+      animateElements.forEach((el) => observer.unobserve(el));
     };
   }, []);
 
@@ -125,9 +129,14 @@ function App() {
       {/* Navbar */}
       <header className="navbar">
         <div className="navbar-container">
-          <div className="navbar-brand">Mukhtarli</div>
+          <div className="navbar-brand">
+            {" "}
+            <a href="#home" onClick={() => setMenuOpen(false)}>
+              Mukhtarli
+            </a>
+          </div>
           <button
-            className={`navbar-toggle ${menuOpen ? 'active' : ''}`}
+            className={`navbar-toggle ${menuOpen ? "active" : ""}`}
             onClick={toggleMenu}
             aria-label="Menu Toggle"
             aria-expanded={menuOpen}
@@ -170,43 +179,50 @@ function App() {
       </section>
 
       <section id="ticker">
-  <div className="ticker-wrapper">
-    <div className="ticker-content">
-      <span>lets talk </span>
-      <span> +++ </span>
-      <span>lets talk </span>
-      <span> +++ </span>
-      <span className='dispNon'>lets talk </span>
-      <span className='dispNon'> +++ </span>
-      <span className='dispNon'>lets talk </span>
-      <span className='dispNon'> +++ </span>
-
-    </div>
-    <div className="ticker-content">
-      <span>lets talk </span>
-      <span> +++ </span>
-      <span>lets talk </span>
-      <span> +++ </span>
-      <span className='dispNon'>lets talk </span>
-      <span className='dispNon'> +++ </span>
-      <span className='dispNon'>lets talk </span>
-      <span className='dispNon'> +++ </span>
-
-    </div>
-  </div>
-</section>
+        <div className="ticker-wrapper">
+          <div className="ticker-content">
+            <span>lets talk </span>
+            <span> +++ </span>
+            <span>lets talk </span>
+            <span> +++ </span>
+            <span className="dispNon">lets talk </span>
+            <span className="dispNon"> +++ </span>
+            <span className="dispNon">lets talk </span>
+            <span className="dispNon"> +++ </span>
+          </div>
+          <div className="ticker-content">
+            <span>lets talk </span>
+            <span> +++ </span>
+            <span>lets talk </span>
+            <span> +++ </span>
+            <span className="dispNon">lets talk </span>
+            <span className="dispNon"> +++ </span>
+            <span className="dispNon">lets talk </span>
+            <span className="dispNon"> +++ </span>
+          </div>
+        </div>
+      </section>
       {/* About */}
       <section id="about" className="section about aboutDiv animate">
         <img src={aboutImg} alt="About" />
         <div className="container marginNull contSecond">
           <h2>About me</h2>
           <p className="textColor">
-            Hi, I'm {me.name} - a freelancer specializing in premium web design, development, and SEO services. I'm passionate about creating unique and effective solutions for my clients, and I bring a personal touch to every project. Let's work together to bring your vision to life!
+            Hi, I'm {me.name} - a freelancer specializing in premium web design,
+            development, and SEO services. I'm passionate about creating unique
+            and effective solutions for my clients, and I bring a personal touch
+            to every project. Let's work together to bring your vision to life!
           </p>
-          <div className='contactLinkDiv'>
-            <a href={me.instagram} target='blank'>Instagram</a>
-            <a href='https://wa.me/994508335557' target='blank'>Whatsapp</a>
-            <a href={me.github} target='blank'>GitHub</a>
+          <div className="contactLinkDiv">
+            <a href={me.instagram} target="blank">
+              Instagram
+            </a>
+            <a href="https://wa.me/994508335557" target="blank">
+              Whatsapp
+            </a>
+            <a href={me.github} target="blank">
+              GitHub
+            </a>
           </div>
         </div>
       </section>
@@ -216,15 +232,20 @@ function App() {
         <div className="container">
           <h2>Projects</h2>
           <div className="projects-grid">
-            {projects.map(project => (
+            {projects.map((project) => (
               <div key={project.id} className="project-card">
-                <div className='imgDivP'>
+                <div className="imgDivP">
                   <img src={project.img} alt={project.title} />
                 </div>
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <a href={project.link} rel="noopener noreferrer" target="_blank" className="btn btn-outline">
+                  <a
+                    href={project.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="btn btn-outline"
+                  >
                     View
                   </a>
                 </div>
@@ -238,17 +259,31 @@ function App() {
       <section id="contact" className="section contact animate">
         <div className="container">
           <h2>Contact</h2>
-          <form className="contact-form" action="https://formspree.io/f/xanqrnol" method="POST">
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/xanqrnol"
+            method="POST"
+          >
             <div className="form-row">
               <div className="form-group">
                 <input type="text" id="formName" placeholder="Name" />
               </div>
               <div className="form-group">
-                <input type="email" id="formEmail" name='email' placeholder="Email" />
+                <input
+                  type="email"
+                  id="formEmail"
+                  name="email"
+                  placeholder="Email"
+                />
               </div>
             </div>
             <div className="form-group">
-              <textarea id="formMessage" name='message' rows="4" placeholder="Message"></textarea>
+              <textarea
+                id="formMessage"
+                name="message"
+                rows="4"
+                placeholder="Message"
+              ></textarea>
             </div>
             <button type="submit" className="btn">
               Send
@@ -256,7 +291,6 @@ function App() {
           </form>
         </div>
         {/* <ContactForm /> */}
-        
       </section>
 
       {/* Footer */}
@@ -264,12 +298,17 @@ function App() {
         <div className="container">
           <p>© {new Date().getFullYear()} All rights reserved.</p>
         </div>
-        <div className='contactLinkDivFooter'>
-          <a href={me.instagram} target='blank'>Instagram</a>
-          <a href='https://wa.me/994508335557' target='blank'>Whatsapp</a>
-          <a href={me.github} target='blank'>GitHub</a>
+        <div className="contactLinkDivFooter">
+          <a href={me.instagram} target="blank">
+            Instagram
+          </a>
+          <a href="https://wa.me/994508335557" target="blank">
+            Whatsapp
+          </a>
+          <a href={me.github} target="blank">
+            GitHub
+          </a>
         </div>
-
       </footer>
     </div>
   );
